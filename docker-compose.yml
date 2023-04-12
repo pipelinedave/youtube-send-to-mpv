@@ -1,0 +1,23 @@
+version: '3'
+services:
+  mpv:
+    image: youtube-mpv-server
+    build: 
+      context: youtube-mpv-server
+    devices:
+      - /dev/dri:/dev/dri
+      - /dev/snd:/dev/snd
+    ipc: host
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+    environment:
+      - DISPLAY=:0
+      - PULSE_SERVER=/run/user/1000/pulse/native
+      - XAUTHORITY=/root/.Xauthority
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - /run/user/1000/pulse:/run/user/1000/pulse
+      - $HOME/.config/mpv:/root/.config/mpv
+      - $HOME/.cache/mpv:/root/.cache/mpv
+      - $HOME/.Xauthority:/root/.Xauthority
