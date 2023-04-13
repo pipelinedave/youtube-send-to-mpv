@@ -1,5 +1,8 @@
 # Youtube MPV Server
 
+![YouTube MPV Server](./logo.png)
+
+
 This is a simple Node.js HTTP server that utilizes yt-dlp and mpv to stream YouTube videos. It's designed to be run inside a Docker container, with the video and audio playing on the host machine.
 
 ## Installation and Usage
