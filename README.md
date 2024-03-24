@@ -7,7 +7,7 @@ This is a simple Node.js HTTP server that utilizes yt-dlp and mpv to stream YouT
 
 ## Installation and Usage
 
-1. Clone this repository: `git clone https://github.com/your-username/youtube-mpv-server.git`
+1. Clone this repository: `git clone https://github.com/pipelinedave/youtube-send-to-mpv.git`
 2. Navigate to the repository directory: `cd youtube-mpv-server`
 3. Build the Docker image: `docker build -t youtube-mpv-server .`
 4. Start the Docker container with the `docker-compose.yml` file: `docker-compose up`
@@ -31,7 +31,7 @@ This Tampermonkey script adds a "Send to MPV" button to every video link on the 
 
 To avoid having to rely on Tampermonkey, a Chrome extension has been created based on the `tampermonkey.js` script. To install the extension:
 
-1. Clone this repository: `git clone https://github.com/your-username/youtube-mpv-server.git`
+    1. Clone this repository: `git clone https://github.com/pipelinedave/youtube-send-to-mpv.git`
 2. Navigate to the `chrome-extension` directory: `cd youtube-mpv-server/chrome-extension`
 3. Open Google Chrome and navigate to `chrome://extensions`
 4. Enable "Developer mode" in the top right corner

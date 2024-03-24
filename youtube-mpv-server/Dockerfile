@@ -12,8 +12,6 @@ RUN apk add --no-cache \
     ttf-dejavu \
     curl \
   && ln -s python3 /usr/bin/python \
-  && wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl \
-  && chmod 755 /usr/local/bin/youtube-dl \
   && adduser -u 1000 -D mpv \
   && mkdir -p /home/mpv/media \
   && mkdir -p /home/mpv/.config/mpv \
