@@ -14,6 +14,13 @@ This is a simple Node.js HTTP server that utilizes yt-dlp and mpv to stream YouT
 5. Open `http://localhost:3000` in your web browser
 6. Enter a valid YouTube video URL and click the "Play" button to start playing the video
 
+## Qutebrowser Userscript
+The Script in qutebrowser/userscripts can be used to add a function of sending the current video to mpv.
+Place the script in your qutebrowser userscript directory, usually ~/.local/share/qutebrowser/userscripts. Make sure it is executable.
+Add a bind to calling the script to qutebrowser like this:
+:bind yt spawn --userscript youtube-to-mpv.sh
+Play a video, run :yt and watch it open in mpv!
+
 ## Tampermonkey Script
 
 The scripts in `tampermonkey.js` can be used to add a variety of functions to YouTube.
