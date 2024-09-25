@@ -22,6 +22,9 @@ RUN rm -rf /var/lib/apt/lists/* && \
     curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp && \
     chmod a+rx /usr/local/bin/yt-dlp
 
+# Run a manual yt-dlp update because thats what their README says to do when using release binaries
+RUN yt-dlp -U
+
 # copy umpv to path
 COPY umpv /bin/
 # make umpv executable

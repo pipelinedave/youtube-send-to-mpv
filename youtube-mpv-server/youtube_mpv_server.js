@@ -11,10 +11,18 @@ const server = http.createServer((req, res) => {
   if (queryObject.url) {
     console.log(`Received request for URL: ${queryObject.url}`);
 
-    // Execute the mpv command with the video URL retrieved using yt-dlp
-    const command = `umpv --no-terminal --vo=x11 --ao=pulse "$(yt-dlp -g -f best --no-warnings '${queryObject.url}')"`
+    // Execute the umpv command with the video URL retrieved using yt-dlp
+    const command = `umpv "$(yt-dlp -g -f best --no-warnings '${queryObject.url}')"`
     console.log(`Executing command: ${command}`);
-    exec(command, { env: { ...process.env, DISPLAY: ':0' } }, (error, stdout, stderr) => {
+
+    // Set the MPV environment variable with your desired options
+    const env = {
+      ...process.env,
+      DISPLAY: ':0',
+      MPV: 'mpv --no-terminal --vo=x11 --ao=pulse'
+    };
+
+    exec(command, { env }, (error, stdout, stderr) => {
       if (error) {
         console.error(`Error executing command: ${error.message}`);
         res.writeHead(500, { 'Content-Type': 'text/plain' });
